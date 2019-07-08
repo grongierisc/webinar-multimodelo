@@ -1,80 +1,80 @@
-# Descripción del proyecto
+# Description of the project
 
-En este ejmplo utilizamos node.js y accedemos directamente a los Globals de InterSystems IRIS para establecer, recuperar y eliminar datos almacenados. Construimos una API REST que es capaz de recibir GET, POST y DELETE de un objeto JSON personalizado y estructurar sus propiedades en Globals de InterSystems IRIS.
+In this example we use node.js and access Globals directly from InterSystems IRIS to establish, retrieve and delete stored data. We build a REST API that is able to receive GET, POST and DELETE from a custom JSON object and structure its properties in InterSystems IRIS Globals.
 
-Este proyecto utiliza:
+This project uses:
 Express Web server (<https://expressjs.com/>)
 
-Por defecto según la configuración el servidor se levanta en el puerto 8000 y la URL base es:
+By default according to the configuration the server is raised on port 8000 and the base URL is:
  <http://localhost:8000/api/test>.
 
-Puedes probar lo siqguiente:
+You can try it next:
 
 URL | Description
 --- | -----------
-GET /api/test/:id | Recupera un objeto con el id especificado
-GET /api/test| Recupepera todos los objetos almacenados
-POST /api/test| Crea un nuevo objeto, el objeto es un objeto JSON arbitrario
-POST /api/test/:id | Actualiza el objeto con el id especificado
-DELETE /api/test/:id| Elimina el objeto con el id especificado
+GET /api/test/:id | Retrieves an object with the specified id
+GET /api/test| Retrieves all stored objects
+POST /api/test| Creates a new object, the object is an arbitrary JSON object
+POST /api/test/:id | Updates the object with the specified id
+DELETE /api/test/:id| Deletes the object with the specified id
 
-En general la API devuelve:
+In general the API returns:
 
 CODE | Description
 ---- | -----------
-200 | Actualizado OK
-201 | Creado OK
-404 | No se encuentra el objeto con el id especificado
-500 | Error en el servidor
+200 | Updated OK
+201 | Created OK
+404 | Object with specified id not found
+500 | Server error
 
-## Como probar este ejemplo
+## How to test this example
 
-**npm** recupera todos los paquetes para ti excepto *iris.node* que debe copiarse manualmente. Así que deberemos copiar el fichero iris.node a la carpeta `/node_module/iris` (crear el directorio si no existe previamente).
+**npm** retrieves all packages for you except *iris.node* which must be copied manually. So we should copy the file iris.node to the folder `/node_module/iris` (create the directory if it doesn't exist previously).
 
-El fichero iris.node se puede obtener desde WRC o también desde el directorio /bin de una instancia de InterSystems IRIS (ojo porque es un binario y depende de la distribución especifica de IRIS).
+The file iris.node can be obtained from WRC or also from the /bin directory of an InterSystems IRIS instance (be careful because it is binary and depends on the specific IRIS distribution).
 
-Hay que tener cuidado y chequear que el fichero del adaptador copiado sea de una versión compatible con la versión de nuestra instalación de node. En mi caso estoy usando la versión de **node v8.12.0** así que necesitaré el fichero `iris800.node` (la idea es que la versión 8 de node coincide con el primer número del nombre del fichero del adaptador). Recuerda renombrar luego el fichero a iris.node al copiarlo a la carpeta.
+Be careful and check that the file of the copied adapter is a version compatible with the version of our installation of node. In my case I'm using the **node v8.12.0** version so I'll need the `iris800.node` file (the idea is that version 8 of node matches the first number in the filename of the adapter). Remember to rename the file to iris.node when copying it to the folder.
 
-Despues de conseguir y copiar el adaptador es muy importante configurar adecuadamente los parámetros de conexión a una instancia de IRIS que están en el fichero `/config/config.js`. Una vez configurado podemos probar la conectividad con el siguiente comando:
+After getting and copying the adapter it is very important to properly configure the connection parameters to an IRIS instance that are in the `/config/config.js` file. Once configured we can test the connectivity with the following command:
 
 ```bash
 npm install
 node ./tests/test.js
 ```
 
-Una vez confirmemos que la conectividad es correcta, ejecutar el siguiente comando para arrancar el servidor:
+Once we confirm that the connectivity is correct, execute the following command to start the server:
 
 ```bash
 npm start
 ```
 
-A partir de este momento ya podemos comezar a probar las invocaciones HTTP:
+From now on we can start testing HTTP invocations:
 
-Crear un nuevo objeto
-
-```bash
-curl -d '{"key1":"value1", "key2":"value2"}' -H "Content-Type: application/json" -X POST http://localhost:8000/api/test
-```
-
-Actualizar un objeto existente
+Create a new object
 
 ```bash
-curl -d '{"key1":"abc", "key2":"abc"}' -H "Content-Type: application/json" -X POST http://localhost:8000/api/test/1
+curl -d '{"key1": "value1", "key2": "value2"}' -H "Content-Type: application/json" -X POST http://localhost:8000/api/test
 ```
 
-Recuperar todos los objetos
+Update an existing object
+
+```bash
+curl -d '{"key1": "abc", "key2": "abc"}' -H "Content-Type: application/json" -X POST http://localhost:8000/api/test/1
+```
+
+Retrieve all objects
 
 ```bash
 curl http://localhost:8000/api/test
 ```
 
-Recuperar un objeto especifico
+Retrieve a specific object
 
 ```bash
 curl http://localhost:8000/api/test/1
 ```
 
-Borrar un objeto existente
+Delete an existing object
 
 ```bash
 curl -X DELETE http://localhost:8000/api/test/1
