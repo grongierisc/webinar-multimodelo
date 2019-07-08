@@ -1,45 +1,45 @@
-# webinar-multimodelo
+# Webinar-multimodel
 
-Ejemplos y demostraciones para el Webinar Bases de Datos Multimodelo
+Examples and demonstrations for the IRIS Webinar Multimodel Databases
 
-El proyecto está dividido en varios ejemplos:
+The project is divided into several examples:
 
 ## jdbc-springboot-maven
 
-En este ejemplo se utiliza un simple proyecto springboot con maven que utiliza el conector Java JDBC de InterSystems IRIS para conectarse a una instancia de IRIS Community Edition que se levanta en un contenedor Docker.
+This example uses a simple springboot project with maven that uses InterSystems IRIS JDBC Java connector to connect to an instance of IRIS Community Edition that is lifted in a Docker container.
 
-Más detalle en el [README](https://github.com/es-comunidad-intersystems/webinar-multimodelo/tree/master/jdbc-springboot-maven) del proyecto
+More details in the [README](https://github.com/grongierisc/webinar-multimodelo/tree/master/jdbc-springboot-maven) of the project
 
 ## jdbc-jpa-rest
 
-En este ejemplo se utiliza igualmente Spring Boot y Maven. En este caso se utiliza Hybernate JPA para vincular las tablas a entidades. Se genera una API REST que puede ser utilizada por cualquier aplicación.
+Spring Boot and Maven are also used in this example. In this case Hybernate JPA is used to link the tables to entities. A REST API is generated that can be used by any application.
 
-Más detalle en el [README](https://github.com/es-comunidad-intersystems/webinar-multimodelo/tree/master/jdbc-jpa-rest) del proyecto
+More details in the [README](https://github.com/grongierisc/webinar-multimodelo/tree/master/jdbc-jpa-rest) of the project
 
 ## webinar-web
 
-Aplicación Angular de ejemplo que utiliza la API desarrollada en el ejemplo anterior
+Angular application of example that uses the API developed in the previous example
 
-Más detalle en el [README](https://github.com/es-comunidad-intersystems/webinar-multimodelo/tree/master/webinar-web) del proyecto
+More details in the [README](https://github.com/grongierisc/webinar-multimodelo/tree/master/webinar-web) of the project
 
 ## rest-docdb
 
-En este ejemplo se presentan las capacidades de Base de Datos documental de IRIS. Para hacerlo de forma simple mostraremos un ejemplo de Uso mediante la API REST incorporada.
+This example presents the IRIS Document Database capabilities. To do it in a simple way we will show an example of Use by means of the API REST incorporated.
 
-Más detalle en el [README](https://github.com/es-comunidad-intersystems/webinar-multimodelo/tree/master/rest-docdb) del proyecto
+More details in the [README](https://github.com/grongierisc/webinar-multimodelo/tree/master/rest-docdb) of the project
 
 ## node-express-rest
 
-En este ejmplo utilizamos node.js y accedemos directamente a los Globals de InterSystems IRIS para establecer, recuperar y eliminar datos almacenados. Construimos una API REST que es capaz de recibir GET, POST y DELETE de un objeto JSON personalizado y estructurar sus propiedades en Globals de InterSystems IRIS.
+In this example we use node.js and access Globals directly from InterSystems IRIS to establish, retrieve and delete stored data. We build a REST API that is able to receive GET, POST and DELETE from a custom JSON object and structure its properties in InterSystems IRIS Globals.
 
-Más detalle en el [README](https://github.com/es-comunidad-intersystems/webinar-multimodelo/tree/master/node-express-rest) del proyecto
+More details in the [README](https://github.com/grongierisc/webinar-multimodelo/tree/master/node-express-rest) of the project
 
 ## iris-phoneapp
 
-Este ejemplo tiene dos proyectos.
+This example has two projects.
 
-El primer proyecto es una API completamente desarrollada en IRIS mediante ObjectScript. En este ejemplo se utilizan las carácteristicas de IRIS para el uso como Base de Datos Orientada a Objetos. Se utiliza la persistencia de objetos nativa de IRIS y además se proporciona una API REST para manipular los objetos de la base de datos.
+The first project is a fully developed API in IRIS using ObjectScript. In this example IRIS features are used for use as an Object-Oriented Database. IRIS native object persistence is used and a REST API is provided to manipulate the objects in the database.
 
-El segundo proyecto es una simple aplicación desarrollada en Angular 7 que hace uso de la API publicada en IRIS.
+The second project is a simple application developed in Angular 7 that makes use of the API published in IRIS.
 
-Más detalle en el [README de la api](https://github.com/es-comunidad-intersystems/webinar-multimodelo/tree/master/iris-phoneapp/api) y en el [README de la app](https://github.com/es-comunidad-intersystems/webinar-multimodelo/tree/master/iris-phoneapp/app)
+More details in the [README of the api](https://github.com/grongierisc/webinar-multimodelo/tree/master/iris-phoneapp/api) and in the [README of the app](https://github.com/grongierisc/webinar-multimodelo/tree/master/iris-phoneapp/app)
