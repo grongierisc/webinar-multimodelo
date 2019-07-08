@@ -1,16 +1,16 @@
-# Descripción del Proyecto
+# Project Description
 
-IRIS dispone de un conjunto de funcionalidades para DocDB, entre ellas está un conjunto de API REST. Están documentadas aqui:
+IRIS has a set of functionalities for DocDB, including a set of API REST. They are documented here:
 
-- [Ejemplos de solicitudes REST](https://irisdocs.intersystems.com/irislatest/csp/docbook/DocBook.UI.Page.cls?KEY=GDOCDB_rest)
-- [Referencia](https://irisdocs.intersystems.com/irislatest/csp/documatic/%25CSP.Documatic.cls?APP=1&LIBRARY=%25SYS&CLASSNAME=%25Api.DocDB.v1)
+- Examples of REST requests](https://irisdocs.intersystems.com/irislatest/csp/docbook/DocBook.UI.Page.cls?KEY=GDOCDB_rest)
+- Reference](https://irisdocs.intersystems.com/irislatest/csp/documatic/%25CSP.Documatic.cls?APP=1&LIBRARY=%25SYS&CLASSNAME=%25Api.DocDB.v1)
 
-En este proyecto se presentan llamadas de Ejemplo para realizar diferentes acciones:
-- Crear Base de datos
-- Insertar un documento
-- Modificar un documento
-- Eliminar un documento
-- Recuperar todos los documentos
-- Recuperar documento por ID
-- Generación de Propiedades de búsqueda
-- Búsqueda de documentos por propiedades
+In this project, example calls are presented to carry out different actions:
+- Create Database
+- Inserting a document
+- Change a document
+- Delete a document
+- Retrieve all documents
+- Retrieve document by ID
+- Generation of Search Properties
+- Search documents by properties
